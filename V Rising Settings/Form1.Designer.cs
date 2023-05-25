@@ -52,6 +52,8 @@
             this.labelPresets = new System.Windows.Forms.Label();
             this.labelGameMode = new System.Windows.Forms.Label();
             this.comboBoxGamemode = new System.Windows.Forms.ComboBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.labelVersionWarning = new System.Windows.Forms.Label();
             this.tabSettings.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             this.tabSettings.Controls.Add(this.tabPageBoss);
             this.tabSettings.Controls.Add(this.tabPageProgression);
             this.tabSettings.Enabled = false;
-            this.tabSettings.Location = new System.Drawing.Point(352, 27);
+            this.tabSettings.Location = new System.Drawing.Point(336, 27);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.SelectedIndex = 0;
             this.tabSettings.Size = new System.Drawing.Size(436, 411);
@@ -196,7 +198,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -286,11 +288,28 @@
             this.comboBoxGamemode.Size = new System.Drawing.Size(121, 21);
             this.comboBoxGamemode.TabIndex = 1;
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "ServerGameSettings.json";
+            this.openFileDialog.Filter = "V Rising Server Settings|ServerGameSettings.json|All files|*.*";
+            // 
+            // labelVersionWarning
+            // 
+            this.labelVersionWarning.AutoSize = true;
+            this.labelVersionWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVersionWarning.ForeColor = System.Drawing.Color.Red;
+            this.labelVersionWarning.Location = new System.Drawing.Point(12, 425);
+            this.labelVersionWarning.Name = "labelVersionWarning";
+            this.labelVersionWarning.Size = new System.Drawing.Size(312, 13);
+            this.labelVersionWarning.TabIndex = 92;
+            this.labelVersionWarning.Text = "[Gloomrot] V Rising has updated to use saves in the v2 directory!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.labelVersionWarning);
             this.Controls.Add(this.comboBoxGamemode);
             this.Controls.Add(this.labelGameMode);
             this.Controls.Add(this.labelPresets);
@@ -298,9 +317,10 @@
             this.Controls.Add(this.tabSettings);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Form1";
             this.Text = "V Rising Settings Editor";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.tabSettings.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -335,6 +355,8 @@
         private System.Windows.Forms.Label labelPresets;
         private System.Windows.Forms.Label labelGameMode;
         private System.Windows.Forms.ComboBox comboBoxGamemode;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label labelVersionWarning;
     }
 }
 
