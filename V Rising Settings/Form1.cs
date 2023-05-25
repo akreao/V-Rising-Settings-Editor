@@ -17,16 +17,6 @@ namespace V_Rising_Settings
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_SizeChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             RepaintSettings();
