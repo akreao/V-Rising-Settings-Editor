@@ -12,9 +12,12 @@ namespace V_Rising_Settings
 {
     public partial class Form1 : Form
     {
+        readonly Form aboutBox;
+
         public Form1()
         {
             InitializeComponent();
+            aboutBox = new AboutBox1();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -51,6 +54,11 @@ namespace V_Rising_Settings
              * Validate JSON
              * backup exiting JSON before overwrite
             */
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aboutBox.Show();
         }
     }
 }
